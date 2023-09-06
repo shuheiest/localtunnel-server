@@ -5,7 +5,6 @@ import Debug from 'debug';
 import http from 'http';
 import { hri } from 'human-readable-ids';
 import Router from 'koa-router';
-
 import ClientManager from './lib/ClientManager';
 
 const debug = Debug('localtunnel:server');
@@ -20,7 +19,6 @@ export default function(opt) {
     function GetClientIdFromHostname(hostname) {
         return myTldjs.getSubdomain(hostname);
     }
-
     const manager = new ClientManager(opt);
 
     const schema = opt.secure ? 'https' : 'http';
